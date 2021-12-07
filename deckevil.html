@@ -1,0 +1,78 @@
+<html>
+<head>
+<title>Austin Powers Cards</title>
+<!--
+shuffle 30 cards to them, 6 from each colour
+make them flippable
+-->
+<script type="text/javascript">
+
+
+  function cunt(c, t, m){
+    var randomIndex = Math.floor(Math.random() * m)+1;
+    console.log(c, t, randomIndex, '<img src=\"', c, '/'  );
+    var output = '<img src="'+c+'/'+t+c +randomIndex +  '.gif" alt="Some alt text">'
+    console.log(output)
+    return output
+  }
+  function shuffle(array) {
+  let currentIndex = array.length,  randomIndex;
+
+  // While there remain elements to shuffle...
+  while (currentIndex != 0) {
+
+    // Pick a remaining element...
+    randomIndex = Math.floor(Math.random() * currentIndex);
+    currentIndex--;
+
+    // And swap it with the current element.
+    [array[currentIndex], array[randomIndex]] = [
+      array[randomIndex], array[currentIndex]];
+  }
+
+  return array;
+}
+
+
+
+
+</script>
+</head>
+<body style="
+    background-color: #31319c;
+">
+
+<p id="result"></p>
+<script>
+  var text = []
+  for (let i = 0; i < 5; i++) {
+    text.push(cunt('blue','bad','9')); 
+}
+for (let i = 0; i < 5; i++) {
+    text.push(cunt('green','bad','17')); 
+}
+for (let i = 0; i < 5; i++) {
+    text.push(cunt('orange','bad','13')); 
+}
+for (let i = 0; i < 5; i++) {
+    text.push(cunt('purple','bad','12')); 
+}
+for (let i = 0; i < 5; i++) {
+    text.push(cunt('red','bad','8')); 
+}
+for (let i = 0; i < 5; i++) {
+    text.push(cunt('yellow','bad','10')); 
+}
+
+
+
+console.log(text)
+shuffle(text);
+console.log(text)
+
+for (let i = 0; i < 30; i++) {
+document.getElementById('result').innerHTML+= text[i];
+}
+</script>
+</body>
+</html>
